@@ -138,7 +138,7 @@
     function init_classic_menu_resize(){
         
         // Mobile menu max height
-        $(".mobile-on .desktop-nav > ul, .mobile-on .wot-blk > ul").css("max-height", $(window).height() - $(".main-nav").height() - 20 + "px");
+        $(".mobile-on .desktop-nav > ul, .mobile-on .nav-tools > ul").css("max-height", $(window).height() - $(".main-nav").height() - 20 + "px");
         
         // Mobile menu style toggle
         if ($(window).width() <= 1024) {
