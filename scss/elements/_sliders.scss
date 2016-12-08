@@ -1,0 +1,80 @@
+/* ==============================
+  Testimonial Slider
+  ============================== */
+
+.fullwidth-slider {
+  background-attachment: scroll !important;
+}
+
+.slider-capital {
+  background-position: center 70% !important;
+  background-image: url('../img/REV_jrn_rally_capitol_hill_2013-05-29_5654.jpg');
+}
+
+
+
+.testimonial-item {
+  @include outer-container(900px);
+  @include padding(0 15px);
+  text-align: center;
+  position: relative; 
+}
+
+.testimonial-text {
+  @include margin(0);
+  @include padding(0);
+  background: none;
+  border: none;
+  color: $snow;
+  .body {
+    @include margin(null null 30px null);
+    font-size: em(35px);
+    line-height: 52px;
+    font-weight: $font-weight--light;
+  }
+  .author {
+    @include margin(null null 18px null);
+    font-size: em(20px);
+    line-height: 1;
+  }
+  .position {
+    line-height: 1;
+  }
+}
+
+.testimonial-icon {
+  @include margin(0 auto 7px auto);
+  text-align: center;
+  font-size: em(32px);
+  color: $snow;
+  > img {
+    max-width: 50px;
+  }
+}
+
+.owl-carousel {
+  position: relative;
+}
+
+.owl-theme .owl-controls .owl-buttons div {
+  @include margin(-23px 0 0 0); // Half of the prev/next buttons height here in negatives to center them perfectly
+  font-size: em(40px);
+  line-height: 1;
+  background: transparent;
+  
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-radius: 0;
+}
+
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 50%;
+}
+.owl-prev {
+  left: 0;
+}
+.owl-next {
+  right: 0;
+}

@@ -1,0 +1,141 @@
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: $small-spacing / 2;
+  padding: 0;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: $small-spacing / 2;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+}
+
+#{$all-text-inputs} {
+  appearance: none;
+  background-color: $base-background-color;
+  border: $base-border;
+  border-radius: $base-border-radius;
+  box-shadow: $form-box-shadow;
+  box-sizing: border-box;
+  margin-bottom: $small-spacing;
+  padding: $base-spacing / 3;
+  transition: border-color $base-duration $base-timing;
+  width: 100%;
+
+  &:hover {
+    border-color: shade($base-border-color, 20%);
+  }
+
+  &:focus {
+    border-color: $action-color;
+    box-shadow: $form-box-shadow-focus;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: shade($base-background-color, 5%);
+    cursor: not-allowed;
+
+    &:hover {
+      border: $base-border;
+    }
+  }
+
+  &::placeholder {
+    color: tint($base-font-color, 40%);
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
+}
+
+[type="file"] {
+  margin-bottom: $small-spacing;
+  width: 100%;
+}
+
+select {
+  margin-bottom: $small-spacing;
+  width: 100%;
+}
+
+
+
+// Search Bar
+
+.search-container {
+  display: block;
+  margin: 0 auto;
+  
+  position: relative;
+
+  // i.search-icon {
+  //   position: relative;
+  //   float: right;
+  //   top: -30px;
+  //   right: 15px;
+  // }
+
+  a.search-icon {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+  }
+
+  input.search-bar{
+    margin: 0 auto;
+    width: 100%;
+    height: 45px;
+    padding: 0 20px;
+    border: $base-border;
+    outline: none;
+    border-radius: 0px;
+    &:focus{
+      border: 1px solid #008ABF;
+      transition: 0.35s ease;
+      color: #008ABF;
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        transition: opacity 0.45s ease; 
+        opacity: 0;
+       }
+      &::-moz-placeholder { /* Firefox 19+ */
+        transition: opacity 0.45s ease; 
+        opacity: 0;
+       }
+      &:-ms-input-placeholder { /* IE 10+ */
+       transition: opacity 0.45s ease; 
+       opacity: 0;
+       }
+       &:-moz-placeholder { /* Firefox 18- */
+       transition: opacity 0.45s ease; 
+       opacity: 0;
+       }    
+     }
+   }
+
+}
+
+
+

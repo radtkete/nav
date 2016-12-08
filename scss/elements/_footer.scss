@@ -1,0 +1,213 @@
+/* ==============================
+  Footer
+  ============================== */
+
+#footer-blue {
+  background: $color-primary;
+  color: $white;
+  border-top: 9px solid $prussian-blue;
+  border-bottom: 9px solid $prussian-blue;
+  text-align: center;
+
+  @include media($medium-up) {
+    text-align: left;
+  }
+
+  p {
+    display: block;
+    font-size: 14px;
+    line-height: 27px;
+  }
+
+  .footer-logo {
+    margin-bottom: 27px;
+  }
+
+
+.grid-span-7 {
+  @include fill-parent;
+  @include pad(0 25% 30px 25%);
+
+  @include media($medium-up) {
+    @include span-columns(7);
+    @include pad();
+  }
+}
+
+.grid-span-4 {
+  @include fill-parent;
+  @include pad();
+  margin-bottom: 30px;
+  @include media($medium-up) {
+    @include span-columns(4);
+    @include shift(1);
+  }
+}
+
+.grid-span-4x2 {
+  @include fill-parent;
+  @include pad();
+  margin-bottom: 30px;
+  @include media($medium-up) {
+    @include span-columns(4);
+    @include shift(2);
+  }
+}
+
+
+a {
+  color: transparentize($white, 0.35);
+  &:focus,
+  &:hover,
+  &.active {
+    color: $white;
+  }
+}
+
+
+  .footer-top {
+    @include padding(75px null 50px null);
+    border-bottom: 6px solid $prussian-blue;
+    position: relative;
+  }
+
+  .footer-bottom {
+    @include margin(25px auto);
+    font-weight: $font-weight--regular;
+    font-size: 14px;
+    ul {
+      display: block;
+      margin-bottom: 15px;
+
+      li {
+        line-height: 1.5em;
+        padding-right: 1em;
+
+        @include media($large-screen) {
+          display: inline;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.hr-footer {
+  display: none;
+
+  @include media($medium-up) {
+    @include margin(10px 0);
+    width: 20px;
+    border-bottom: 3px solid $base-border-color;
+  }
+}
+
+.footer-headline {
+  @extend .text-author;
+  margin-bottom: 5px;
+  color: $white;
+  @include media($medium-up) {
+    margin-bottom: 14px;
+  }
+}
+
+.footer-links > li,
+.col-lg-3 > p {
+  font-weight: $font-weight--regular;
+  font-size: 14px;
+  line-height: 27px;
+  a {
+    color: $white;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ==============================
+  Footer - Blank
+  ============================== */
+
+
+
+.footer-blank {
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $medium-screen: 40em !default;
+  $large-screen: 53.75em !default;
+  $footer-color: white;
+  $footer-link-color: transparentize($footer-color, 0.6);
+  $footer-disclaimer-color: transparentize($footer-color, 0.6);
+
+  background: $color-primary;
+  padding: ($base-spacing * 2) $gutter;
+  width: 100%;
+  border-top: 6px solid $prussian-blue;
+  border-bottom: 6px solid $prussian-blue;
+
+  .footer-logo {
+    margin-bottom: 2em;
+    text-align: center;
+
+    img {
+      height: 3em;
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: $base-spacing;
+  }
+
+  ul {
+    flex-basis: 13em;
+    flex-shrink: 0;
+    margin-bottom: $base-spacing * 2;
+    padding: 0;
+  }
+
+  li {
+    line-height: 1.5em;
+    list-style: none;
+    text-align: center;
+  }
+
+  li a {
+    color: $footer-link-color;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      color: transparentize($footer-color, 0);
+    }
+  }
+
+  li h3 {
+    color: $footer-color;
+    font-size: 1em;
+    margin-bottom: 0.4em;
+  }
+
+  hr {
+    border: 1px solid transparentize($footer-disclaimer-color, 0.3);
+    margin: 0 auto $base-spacing;
+    width: 12em;
+  }
+
+  p {
+    color: $footer-disclaimer-color;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    margin: auto;
+    max-width: 35em;
+    text-align: center;
+  }
+}

@@ -1,0 +1,79 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "base/base";
+
+
+@font-face {
+	font-family: 'Benton Sans';
+	src: url( '../fonts/benton-thin.otf' );
+	src: url( '../fonts/benton-thin.otf?#iefix' ) format( 'embedded-opentype' ),
+	     url( '../fonts/benton-thin.woff' ) format( 'woff' );
+	font-weight: 100;
+	font-style: normal;
+}
+
+/* LIGHT */
+
+@font-face {
+	font-family: 'Benton Sans';
+	src: url( '../fonts/benton-light.otf' );
+	src: url( '../fonts/benton-light.otf?#iefix' ) format( 'embedded-opentype' ),
+	     url( '../fonts/benton-light.woff' ) format( 'woff' );
+	font-weight: 300;
+	font-style: normal;
+}
+
+/* LIGHT  ITALIC */
+
+@font-face {
+	font-family: 'Benton Sans';
+	src: url( '../fonts/benton-light-it.otf' );
+	src: url( '../fonts/benton-light-it.otf?#iefix' ) format( 'embedded-opentype' ),
+	     url( '../fonts/benton-light-it.woff' ) format( 'woff' );
+	font-weight: 300;
+	font-style: italic;
+}
+
+/* REGULAR */
+
+@font-face {
+	font-family: 'Benton Sans';
+	src: url( '../fonts/benton-book.otf' );
+	src: url( '../fonts/benton-book.otf?#iefix' ) format( 'embedded-opentype' ),
+	     url( '../fonts/benton-book.woff' ) format( 'woff' );
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* REGULAR ITALIC */
+
+@font-face {
+	font-family: 'Benton Sans';
+	src: url( '../fonts/benton-book-it.otf' );
+	src: url( '../fonts/benton-book-it.otf?#iefix' ) format( 'embedded-opentype' ),
+	     url( '../fonts/benton-book-it.woff' ) format( 'woff' );
+	font-weight: 400;
+	font-style: italic;
+}
+
+/* MEDIUM */
+
+@font-face {
+	font-family: 'Benton Sans';
+	src: url( '../fonts/benton-med.otf' );
+	src: url( '../fonts/benton-med.otf?#iefix' ) format( 'embedded-opentype' ),
+	     url( '../fonts/benton-med.woff' ) format( 'woff' );
+	font-weight: 500;
+	font-style: normal;
+}
+
+/* BOLD */
+
+@font-face {
+	font-family: 'Benton Sans';
+	src: url( '../fonts/benton-bold.otf' );
+	src: url( '../fonts/benton-bold.otf?#iefix' ) format( 'embedded-opentype' ),
+	     url( '../fonts/benton-bold.woff' ) format( 'woff' );
+	font-weight: 700;
+	font-style: normal;
+}

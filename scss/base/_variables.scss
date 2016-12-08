@@ -1,0 +1,84 @@
+// Breakpoints
+$medium-screen: 600px;
+$large-screen: 900px;
+
+
+$small-up  : 600px;
+$medium-up : 800px;
+$large-up  : 1000px;
+$xlarge-up : 1200px;
+
+
+// Typography
+// $base-font-family: $font-stack-system;
+   $base-font-family: 'Benton Sans', Arial, sans-serif;;
+   $heading-font-family: $base-font-family;
+
+// Font Sizes
+$base-font-size: 1em;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$blue: #1565c0;
+
+
+$prussian-blue : #002D4B;
+$indigo        : #003c69;
+$teal          : #007A87;
+$sea-green     : #19A8B8;
+$white         : #FFFFFF;
+$snow          : #FAFAFA;
+$platimun      : #E8E8E8;
+$gray          : #BBBBBB;
+$taupe-gray    : #888888;
+$quartz        : #4A4A4A;
+$orange        : #F37F30;
+
+$color-primary   : $indigo;
+$color-secondary : $teal;
+
+
+$dark-gray: $taupe-gray;
+$medium-gray: $gray;
+$light-gray: $platimun;
+
+
+
+// Font Weights
+
+$font-weight--thin       : 100;
+$font-weight--light      : 300;
+$font-weight--regular    : 400;
+$font-weight--medium     : 500;
+$font-weight--bold       : 700;
+
+
+
+// Font Colors
+$base-font-color: $quartz;
+$action-color: $sea-green;
+
+// Border
+$base-border-color: $platimun;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: $white;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;

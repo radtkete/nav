@@ -1,0 +1,651 @@
+/* ==============================
+  Navbar
+  ============================== */
+
+$navigation-height: 60px;
+$nav-break: 1153px;
+$navigation-color: transparentize($white, 0.5);
+
+header.navigation {
+  @include size(100% 125px);
+  background-color: $color-primary;
+  min-height: $navigation-height;
+  z-index: 999;
+  border-bottom: 5px solid $base-border-color;
+
+@include media ($large-screen) {
+  @include size(100% 120px);
+  border-bottom: 0;
+}
+
+  @include media ($nav-break) {
+    @include size(100% $navigation-height);
+  }
+
+
+  .navigation-wrapper {
+    @extend .container;
+    @include clearfix;
+    position: relative;
+  }
+
+
+  // Navbar Logo
+  .navbar-brand {
+    @include position(absolute, 16px null null 0);
+    @include fill-parent;
+    text-align: center;
+
+    @include media ($large-screen) {
+      @include position(relative, 0 null null null);
+      @include padding(10px 2em 10px 1em);
+      @include size(auto auto);
+      float: left;
+      max-height: $navigation-height;
+    }
+
+    img {
+      @include size(136px 68px);
+
+      @include media ($large-screen) {
+        @include size(82px 42px);
+      }
+
+    }
+  }
+
+
+
+
+
+  /* ==============================
+  Mobile view
+  ============================== */
+
+  .navigation-menu-button {
+    @include position(absolute, 40px null null 35px);
+    color: $navigation-color;
+
+    @include media ($large-screen) {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      color: $white;
+    }
+  }
+
+  // Nav menu
+
+  nav {
+    // float: none;
+    min-height: $navigation-height;
+    padding-top: 125px;
+    z-index: 9999999;
+
+    @include media ($large-screen) {
+      float: left;
+      padding-top: 0;
+    }
+  }
+
+
+  .navigation-menu {
+    @include clearfix;
+    @include fill-parent;
+    @include padding(50px 0 0 0);
+    @include margin(0 auto);
+
+    background-color: $color-primary;
+    display: none;
+    overflow: visible;
+    z-index: 9999;
+
+    &.show {
+      display: block;
+    }
+
+    @include media ($large-screen) {
+      @include padding(0);
+      display: inline;
+    }
+  }
+
+  // The nav items
+
+  .nav-link {
+    @include fill-parent;
+
+    background: $color-primary;
+    display: block;
+    line-height: $navigation-height;
+    overflow: hidden;
+    padding-right: 1em;
+    padding-left: 24px;
+
+    @include media ($large-screen) {
+      display: inline;
+      width: auto;
+      padding-left: 0px;
+    }
+
+    > a {
+      color: $navigation-color;
+      display: inline-block;
+
+      @include media ($large-screen) {
+        // padding-right: 1em;
+
+        &.active.nav-link-more {
+          position: relative;
+          &:before {
+            @include triangle(34px, #EAEEEF, up);
+            @include position(absolute, null null 0 50%);
+            @include margin(null null null -17px);
+            content: "";
+          }
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+
+      &:focus,
+      &:hover,
+      &.active {
+        color: $white;
+      }
+    }
+
+  }
+
+
+
+
+
+
+// Elements on the far right
+
+.navigation-tools {
+  @include position(absolute, 100px null null null);
+  @include clearfix;
+  @include size(100% auto);
+  @include padding(0 1em);
+  background: transparent;
+  display: block;
+  z-index: 99999999999;
+
+  @include media($large-screen) {
+    @include position(relative, 0 null null null);
+    @include padding(0);
+    width: auto;
+    clear: none;
+    float: right;
+  }
+}
+
+  @media screen and (min-width: $large-screen) and (max-width: $nav-break) {
+    .navigation-tools {
+      @include padding(0 1em);
+      float: none;
+      clear: both;
+      background-color: $color-primary;
+    }
+  }
+
+// Search bar
+
+.search-container {
+  @include size(100% 45px);
+
+  @include media($large-screen) {
+    @include size(16em $navigation-height);
+    @include padding(7.5px 0);
+  }
+
+  a.search-icon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    @include media($large-screen) {
+      top: 18px;
+    }
+  }
+
+  .search-bar {
+    border: $base-border-radius solid #E8E8E8;
+    border-radius: $base-border-radius;
+
+    @include media($large-screen) {
+      border: 1px solid #E8E8E8;
+    }
+    
+  }
+
+}
+
+
+@media screen and (min-width: $large-screen) and (max-width: $nav-break) {
+  .search-container {
+    @include fill-parent;
+    display: block;
+    clear: both;
+    float: none;
+  }
+}
+
+
+
+
+
+
+.button-block {
+  display: none;
+
+  @include media($large-screen) {
+    float: right;
+    display: inline;
+    line-height: $navigation-height;
+    text-decoration: none;
+  }
+
+  .button-block-btn {
+    @include padding(0 25px);
+    display: inline-block;
+    color: rgba($white, 0.7);
+    text-transform: uppercase;
+    &:hover,
+    &:focus {
+      background-color: shade($color-primary, 20%);
+      color: $white;
+    }
+    &:last-child {
+      background-color: $color-secondary;
+      &:hover,
+      &:focus {
+        background-color: shade($color-secondary, 20%);
+        color: $white;
+      }
+    }
+  }
+}
+
+
+
+
+
+}
+
+
+
+
+
+/* ==============================
+  Sub-Nav Footer
+  ============================== */
+
+
+// ul.learning-central,
+// ul.career-central,
+// ul.member-student-central,
+// ul.advocacy-policy-central,
+// ul.pas-connect {
+//   display: none;
+// }
+
+
+.sub-nav-footer-on {
+  display: none;
+  @include media($large-screen) {
+    display: block;
+  }
+}
+
+.sub-nav-footer {
+display: none;
+  @include media($large-screen) {
+    @include clearfix;
+    @include fill-parent;
+    background: #EAEEEF;
+    border: 1px solid #D7D7D7;
+    border-top: 0;
+
+    ul {
+      @include media($large-screen) {
+        // float: left;
+        text-align: center;
+      }
+
+      li {
+        line-height: 1.5em;
+        padding-right: 1em;
+
+          a {
+            display: inline-block;
+            color: #7B7B7B;
+            font-size: em(15px);
+            line-height: 1;
+            &:hover,
+            &.active {
+              color: #19A8B8;
+            }
+          }
+
+        @include media($large-screen) {
+          display: inline;
+          text-align: left;
+          background: transparent;
+          line-height: $navigation-height;
+          width: auto;
+          overflow: hidden;
+          padding-right: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .sub-nav-footer {
+    display: none !important;
+  }
+}
+
+
+
+/* ==============================
+  Mega Menu
+  ============================== */
+
+// .mega-menu-on {
+//   background: #EAEEEF;
+//   display: block;
+// }
+
+
+
+
+// .mega-menu {
+//   @include position(absolute, 125px null null 0);
+//   @include padding(40px 0);
+//   @include fill-parent;
+//   display: none;
+//   background: #EAEEEF;
+//   border: 1px solid #DDDDDD;
+//   border-top: 0;
+//   z-index: 999000;
+
+//   @include media($large-screen) {
+//     @include position(absolute, $navigation-height null null 0);
+//   }
+
+
+
+//   .mega-menu-column {
+//     @include fill-parent;
+//     @include media($large-screen) {
+//       @include span-columns(6);
+//       &:last-child {
+//         border-right: transparent;
+//       }
+//     }
+//   }
+
+
+//   .mega-menu-column-lg {
+//     @include media($large-screen) {
+//       @include span-columns(12);
+//       &:last-child {
+//         border-right: transparent;
+//       }
+//     }
+//   }
+
+
+//   .mega-menu-link-lg {
+//     line-height: 1;
+//     font-weight: $font-weight--medium;
+//     > a {
+//       color: $indigo !important;
+//     }
+//   }
+
+//   .mega-menu-headline-sm {
+//     color: $base-font-color;
+//     font-weight: $font-weight--medium;
+//     font-size: 14px;
+//     line-height: 1;
+//     text-transform: uppercase;
+//     margin-bottom: 8px;
+//   }
+
+//   .mega-menu-link-sm a {
+//     color: $base-font-color;
+//     font-weight: $font-weight--regular;
+//     font-size: 14px;
+//     line-height: 30px;
+//     &:hover {
+//       color: $teal;
+//     }
+//   }
+
+//   li.divider {
+//     @include size(auto 2px);
+//     @include margin(25px 0);
+//     overflow: hidden;
+//     background-color: #e5e5e5;
+//   }
+// }
+
+
+
+
+//   @media screen and (min-width: $large-screen) and (max-width: $nav-break) {
+//     .mega-menu {
+//       @include position(absolute, $navigation-height * 2 null null 0);
+//     }
+//   }
+
+
+
+
+
+
+
+
+
+
+
+// .nav-link.dropdown {
+
+//   .dropdown-container {
+//     @include outer-container;
+//     @include pad(40px default);
+//     line-height: 1 !important;
+//   }
+
+
+
+//   .dropdown-button {
+//     cursor: pointer;
+//     position: relative;
+
+//     &.active {
+//       &:before {
+//         @include triangle(34px, #EAEEEF, up);
+//         @include position(absolute, null null -22px 50%);
+//         @include margin(null null null -17px);
+//         content: "";
+//       }
+//     }
+//   }
+
+
+
+//   .dropdown-menu {
+//     @include transition (all 0.2s ease-in-out);
+//     @include fill-parent;
+//     @include position(absolute, $navigation-height null null 0);
+//     cursor: pointer;
+//     display: none;
+//     overflow: show;
+//     text-align: left;
+//     z-index: 99999;
+//     background: #EAEEEF;
+//     border: 1px solid #DDDDDD;
+//     border-top: 0;
+//   }
+
+//   @media screen and (min-width: $large-screen) and (max-width: $nav-break) {
+//     .dropdown-menu {
+//       @include position(absolute, $navigation-height * 2 null null 0);
+//     }
+//   }
+
+//   .mega-menu-link-lg {
+//     line-height: 1;
+//     font-weight: $font-weight--medium;
+//     > a {
+//       color: $indigo !important;
+//     }
+//   }
+
+//   .mega-menu-headline-sm {
+//     color: $base-font-color;
+//     font-weight: $font-weight--medium;
+//     font-size: 14px;
+//     line-height: 1;
+//     text-transform: uppercase;
+//     margin-bottom: 8px;
+//   }
+
+//   .mega-menu-link-sm a {
+//     color: $base-font-color;
+//     font-weight: $font-weight--regular;
+//     font-size: 14px;
+//     line-height: 30px;
+//     &:hover {
+//       color: $teal;
+//     }
+//   }
+
+
+//   .mega-menu-column {
+//     @include span-columns(6);
+//   }
+
+//   .mega-menu-column-lg {
+//     @include span-columns(12);
+//   }
+
+//   .show-menu {
+//     display: block;
+//   }
+
+//   li.divider {
+//     @include size(auto 2px);
+//     @include margin(25px 0);
+//     overflow: hidden;
+//     background-color: #e5e5e5;
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.megamenu {
+  @include position(absolute, 125px null null 0);
+  @include fill-parent;
+  @include outer-container;
+  @include pad(40px default);
+  display: none;
+  text-align: left;
+  background: #EAEEEF;
+  border: 1px solid #DDDDDD;
+  border-top: 0;
+  z-index: 999000;
+
+
+  @include media ($large-screen) {
+    top: 120px;
+  }
+
+  @include media ($nav-break) {
+    top: 60px;
+  }
+
+  .mega-menu-column {
+    @include fill-parent;
+    @include media($large-screen) {
+      @include span-columns(6);
+      &:last-child {
+        border-right: transparent;
+      }
+    }
+
+    @include media ($large-screen) {
+      @include span-columns(6);
+    }
+
+    @include media ($nav-break) {
+      @include span-columns(6);
+    }
+
+  }
+
+  .mega-menu-column-lg {
+    @include span-columns(12);
+  }
+
+
+  .mega-menu-link-lg {
+    line-height: 1;
+    font-weight: $font-weight--medium;
+    > a {
+      color: $indigo !important;
+    }
+  }
+
+  .mega-menu-headline-sm {
+    color: $base-font-color;
+    font-weight: $font-weight--medium;
+    font-size: 14px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+
+  .mega-menu-link-sm {
+    line-height: 30px;
+    > a {
+      color: $base-font-color;
+      font-weight: $font-weight--regular;
+      font-size: 14px;
+      &:hover {
+        color: $teal;
+      }
+    }
+  }
+
+  li.divider {
+    @include size(auto 2px);
+    @include margin(25px 0);
+    overflow: hidden;
+    background-color: #e5e5e5;
+  }
+}
+

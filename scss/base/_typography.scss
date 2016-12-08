@@ -1,0 +1,281 @@
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: $font-weight--regular;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  font-size: modular-scale(1);
+  line-height: $heading-line-height;
+  @include margin(0 0 $small-spacing);
+}
+
+p {
+  @include margin(0 0 $small-spacing);
+}
+
+a {
+  color: $action-color;
+  text-decoration: none;
+  @include transition(color $base-duration $base-timing);
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: shade($action-color, 25%);
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+
+%section-padding,
+.section-padding {
+  @include padding(35px 28px);
+}
+
+.bg-gray {
+  background-color: $base-border-color;
+}
+
+
+.headline-slider {
+  font-size: em(26px);
+  font-weight: $font-weight--medium;
+  color: $color-secondary;
+}
+
+.headline-margin,
+.headline-main {
+  font-size: em(22px);
+  font-weight: $font-weight--medium;
+}
+
+.text-block-sm_headline {
+  color: $teal;
+  font-weight: $font-weight--bold;
+  margin-bottom: 18px;
+}
+
+
+
+/* ==============================
+  16px
+  ============================== */
+
+.headline-standard {
+  color: $teal;
+  font-size: em(16px);
+  font-weight: $font-weight--medium;
+
+
+  &.upper-case {
+    @extend .job-item;
+    color: $base-font-color;
+    text-transform: uppercase;
+  }
+}
+
+
+/* ==============================
+  15px
+  ============================== */
+
+.text-block-sm_body {
+  font-size: em(15px);
+  line-height: 25px;
+}
+
+
+
+/* ==============================
+  14px
+  ============================== */
+
+.text-author,
+.text-block-sm_author {
+  color: $dark-gray;
+  font-size: em(14px);
+  font-weight: $font-weight--bold;
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+
+
+/* ==============================
+  13px
+  ============================== */
+
+.job-title,
+.job-location {
+  font-size: em(13px);
+  color: $taupe-gray;
+}
+
+.job-title {
+  font-weight: $font-weight--medium;
+}
+
+.job-location {
+  font-weight: $font-weight--regular;
+}
+
+
+
+/* ==============================
+  12px
+  ============================== */
+
+.text-block-sm_desc {
+  color: $medium-gray;
+  font-size: em(12px);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.job-item {
+  @include padding(25px 20px);
+  border-bottom: $base-border;
+}
+
+
+// Small - Text Block
+
+.text-block-sm {
+  @extend %section-padding;
+  border: $base-border;
+  background: $white;
+  @include media($medium-up) {
+    @include span-columns(8);
+  }
+}
+
+
+// Large - Text Block
+
+.text-block-lg {
+  @extend %section-padding;
+  border: $base-border;
+  background: $white;
+  @include media($medium-up) {
+    @include span-columns(16);
+  }
+}
+
+
+
+// Colored BG - Text Block
+
+.text-block-sm_bg {
+  @extend %section-padding;
+  background: $teal;
+  border: $base-border;
+
+  @include media($medium-up) {
+    @include span-columns(8);
+  }
+
+  .text-block-sm_headline {
+    color: $snow;
+  }
+
+  .text-block-sm_author {
+    color: $medium-gray;
+  }
+}
+
+
+
+
+// Sponsored - Text Block
+
+.text-block-sm_sponsor {
+  @extend %section-padding;
+  border: $base-border;
+  background: #EAEEEF;
+
+  @include media($medium-up) {
+    @include span-columns(8);
+  }
+
+  .text-block-sm_desc {
+    color: $dark-gray;
+  }
+
+  .text-block-sm_headline,
+  .text-block-sm_author {
+    font-weight: $font-weight--regular;
+  }
+}
+
+
+
+
+// Double/Triple Column - Text Block
+
+.text-block-group-pseduo {
+  @include outer-container;
+  .text-block-group {
+    @extend %section-padding;
+
+    @include media($medium-up) {
+      @include span-columns(8);
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      border-left: 1px dashed $light-gray;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

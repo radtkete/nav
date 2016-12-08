@@ -1,0 +1,231 @@
+figure {
+  margin: 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+
+/* ==============================
+  Article - Content Block
+  ============================== */
+
+.hero {
+  @include display(flex)
+  @include align-items(center);
+  @include justify-content(center);
+  @include padding(2em);
+  @include margin(null null 40px null);
+  min-height: em(400px);
+
+  background: url("../img/CHLM%20Photos/iStock_000055230672.jpg");
+  background-position: center;
+  background-size: cover;
+
+  @include media($large-screen) {
+    @include justify-content(flex-end);
+  }
+
+  .hero-content {
+    max-width: 70%;
+    text-align: left;
+  }
+}
+
+
+
+
+/* ==============================
+  Article - Content Block
+  ============================== */
+
+
+.article {
+  @include display(table);
+  @include fill-parent;
+  @include padding(40px 0);
+
+  .article_image,
+  .article_content {
+    @include display(table-cell);
+    vertical-align: middle;
+  }
+
+  .article_image {
+    @include padding(null $gutter null null);
+
+    img {
+      height: em(200px);
+      max-width: none;
+    }
+  }
+
+  .article_content {
+    @include fill-parent;
+  }
+}
+
+
+
+/* ==============================
+  Article Full Width - Content Block
+  ============================== */
+
+.article-vert {
+  @include display(table);
+  @include fill-parent;
+
+  @include media($medium-up) {
+    @include span-columns(16);
+  }
+
+  .article-vert_image,
+  .article-vert_content {
+    @include display(table-cell);
+    vertical-align: top;
+  }
+
+  .article-vert_image {
+    @include padding(null $base-spacing null null);
+
+    > img {
+      @include size(auto 100%);
+      display: block;
+      max-width: none;
+    }
+  }
+
+  .article-vert_content {
+    @include fill-parent;
+    @include padding(null null null $base-spacing);
+  }
+}
+
+
+
+
+// Side Image Content
+
+.side-image {
+  background: $teal;
+  color: $white;
+
+  @include media($large-screen) {
+    @include row(table);
+  }
+
+  .images-wrapper {
+    @include padding(3em);
+    background: url("../img/pdf_placeholder.jpg");
+    background-color: $teal;
+    background-size: contain;
+    display: block;
+    // min-height: 12em;
+    min-height: 446px;
+    position: relative;
+
+    @include media($large-screen) {
+      @include span-columns(7);
+      background-position: bottom left;
+
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .side-image-content {
+    @include span-columns(12);
+    @include padding(1em 1em 4em 1em);
+
+    @include media($large-screen) {
+      @include span-columns(18);
+      @include padding(4em 4em 8em 4em);
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: $base-spacing;
+    }
+
+    li {
+      margin-bottom: 20px;
+    }
+  }
+  @include reset-display();
+}
+
+
+.arrow-left {
+  @include triangle(80px, $teal, left);
+  @include position(absolute, null 0 null null);
+}
+
+
+
+
+
+
+
+// Image Cards - Trio
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .card {
+    @include margin(0 1em $base-spacing 1em);
+    background-color: lighten($base-border-color, 10%);
+    border: $base-border;
+    border-radius: $base-border-radius;
+    box-shadow: 0 2px 4px darken($white, 10%);
+    cursor: pointer;
+    flex-basis: 15em;
+    flex-grow: 1;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+
+    .card-image {
+      @include border-top-radius($base-border-radius);
+      background-color: $color-secondary;
+      max-height: 220px;
+      height: auto;
+      overflow: hidden;
+
+      img {
+        @include border-top-radius($base-border-radius);
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    .text-block-sm {
+      @include fill-parent;
+      float: none;
+    }
+
+
+    &:focus,
+    &:hover {
+      cursor: pointer;
+      border-radius: $base-border-radius;
+
+      img {
+        opacity: 0.7;
+      }
+    }
+
+    &:active {
+      background-color: lighten($base-border-color, 10%);
+
+      .card-header {
+        background-color: lighten($base-border-color, 10%);
+      }
+    }
+  }
+}

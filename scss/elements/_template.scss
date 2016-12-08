@@ -1,0 +1,148 @@
+/* ==============================
+  Color Pallete
+  ============================== */
+
+.card-colors {
+  border: $base-border;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 4px $light-gray;
+
+  @include media($large-screen) {
+    @include span-columns(6);
+    @include omega(4n);
+  }
+
+  @include media(min-width $medium-screen max-width $large-screen) {
+    @include span-columns(12);
+    @include omega(2n);
+  }
+  
+  .color-box {
+    height: 175px;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .color-info {
+    padding: 25px 20px;
+    background: $snow;
+    .headline-standard {
+      color: $base-font-color;
+      text-transform: uppercase;
+    }
+    p {
+      @extend .job-location;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+
+
+
+.col-button-3 {
+  margin-bottom: 40px;
+
+  @include media($large-screen) {
+    @include span-columns(6);
+    @include omega(4n);
+  }
+
+  @include media(min-width $medium-screen max-width $large-screen) {
+    @include span-columns(12);
+    @include omega(2n);
+  }
+}
+
+
+
+
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.small-section-title {
+  @include span-columns(16);
+  h1 {
+    color:#19A8B8; 
+    margin-bottom: .75em;
+    font-size: 30px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+}
+
+.small-section-nav {
+  @include span-columns(8);
+  margin-top: 30px
+}
+
+
+
+
+
+
+
+// MARCA
+
+#marca8 {
+  @include span-columns(24);
+  @include pad(0 default);
+  .text-block-sm {
+    @include span-columns(24 of 24);
+  }
+
+  @include media($small-up) {
+    .text-block-sm {
+      @include span-columns(12 of 24);
+    }
+  }
+
+
+  @include media($large-up) {
+    @include span-columns(16);
+    @include pad(0);
+    .text-block-sm {
+      @include span-columns(8 of 16);
+    }
+  }
+
+
+
+  .accordion-wrapper {
+    margin-bottom: 70px;
+  }
+
+  .text-block-sm {
+    margin-bottom: 40px;
+  }
+}
+
+
+#marca4 {
+  @include span-columns(24);
+  @include pad(0 default);
+
+
+  @include media($medium-up) {
+    .job-source-feed {
+      @include span-columns(12 of 24);
+    }
+  }
+
+  @include media($large-up) {
+    @include span-columns(8);
+    @include pad(0);
+    .job-source-feed {
+      @include fill-parent();
+    }
+  }
+
+  .job-source-feed {
+    margin-bottom: 40px;
+  }
+}
+
+
+
