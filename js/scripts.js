@@ -162,7 +162,7 @@
         
         
         height_line($(".inner-nav > ul > li > a"), $(".main-nav"));
-        // height_line(hamburger_nav, $(".main-nav"));
+        height_line(hamburger_nav, $(".main-nav"));
         
         // hamburger_nav.css({
         //     "width": ($(".main-nav").height() - 24) / 2 + "px",
