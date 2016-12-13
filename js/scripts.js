@@ -132,7 +132,7 @@
      Nav panel classic
      --------------------------------------------- */
     
-    var mobile_nav = $(".mobile-nav");
+    var hamburger_nav = $(".hamburger");
     var desktop_nav = $(".desktop-nav");
     
     function init_classic_menu_resize(){
@@ -162,11 +162,12 @@
         
         
         height_line($(".inner-nav > ul > li > a"), $(".main-nav"));
-        height_line(mobile_nav, $(".main-nav"));
+        // height_line(hamburger_nav, $(".main-nav"));
         
-        mobile_nav.css({
-            "width": $(".main-nav").height() + "px"
-        });
+        // hamburger_nav.css({
+        //     "width": ($(".main-nav").height() - 24) / 2 + "px",
+        //     "margin-top": ($(".main-nav").height() - 24) / 2 + "px"
+        // });
         
         // Transpaner menu
         
@@ -178,11 +179,11 @@
             
                 if ($(window).scrollTop() > 10) {
                     $(".js-transparent").removeClass("transparent");
-                    $(".main-nav, .nav-logo-wrap .logo, .mobile-nav").addClass("small-height");
+                    $(".main-nav, .nav-logo-wrap .logo, .hamburger").addClass("small-height");
                 }
                 else {
                     $(".js-transparent").addClass("transparent");
-                    $(".main-nav, .nav-logo-wrap .logo, .mobile-nav").removeClass("small-height");
+                    $(".main-nav, .nav-logo-wrap .logo, .hamburger").removeClass("small-height");
                 }
             
             
@@ -190,7 +191,7 @@
         
         // Mobile menu toggle
         
-        mobile_nav.click(function(){
+        hamburger_nav.click(function(){
         
             if (desktop_nav.hasClass("js-opened")) {
                 desktop_nav.slideUp("slow", "easeOutExpo").removeClass("js-opened");
@@ -199,6 +200,7 @@
             else {
                 desktop_nav.slideDown("slow", "easeOutQuart").addClass("js-opened");
                 $(this).addClass("active");
+
                 
                 // Fix for responsive menu
                 if ($(".main-nav").hasClass("not-top")){
@@ -210,9 +212,9 @@
         });
         
         desktop_nav.find("a:not(.mn-has-sub)").click(function(){
-            if (mobile_nav.hasClass("active")) {
+            if (hamburger_nav.hasClass("active")) {
                 desktop_nav.slideUp("slow", "easeOutExpo").removeClass("js-opened");
-                mobile_nav.removeClass("active");
+                hamburger_nav.removeClass("active");
             }
         });
         
